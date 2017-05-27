@@ -1,0 +1,7 @@
+SqlConnection a = new SqlConnection("Data Source=.;Initial Catalog=login;Integrated Security=True");
+            SqlCommand b = new SqlCommand("SELECT* FROM me WHERE Name LIKe '"+textBox1.Text+"%' AND Designation LIKE '"+textBox3.Text+"%'", a);
+            a.Open();
+            SqlDataAdapter j = new SqlDataAdapter(b);
+            DataTable dt = new DataTable();
+            j.Fill(dt);
+            dataGridView1.DataSource = dt;
